@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         },
         data: {
         followings: {
-            connect: { id: Number(userId) } // 
+            disconnect: { id: Number(userId) } // 
             }
         }
     });
@@ -33,7 +33,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         where: { id: Number(userId) },
         data: {
             followers: {
-                connect: { id: Number(currentUser.id )} // 
+            disconnect: { id: Number(currentUser.id )} // 
             }
         }
         });

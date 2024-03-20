@@ -13,7 +13,7 @@ const useFollow = (userId: string) => {
 
   const unFollow = useCallback(async () => {
     try {
-      let request= () => axios.post('/api/follow', { userId });
+      let request= () => axios.post('/api/unfollow', { userId });
       await request();
       mutateCurrentUser();
       mutateFetchedUser();

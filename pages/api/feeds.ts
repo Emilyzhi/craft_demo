@@ -20,6 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const feeds =await Promise.all(userIds.map(async (userId) => {
             
             const userTweets=await prisma.tweet.findMany({
+              take: 100, 
               where: {
                 userId: Number(userId.id),
               },
